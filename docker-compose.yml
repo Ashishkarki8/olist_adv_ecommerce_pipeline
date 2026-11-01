@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16          # the recipe to build the container from
+    container_name: olist_postgres  # fixed name, so `docker exec` works later
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}      # ${...} = read from .env file
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"           # host_port:container_port (your PC : container)
+    volumes:
+      - pgdata:/var/lib/postgresql/data   # named volume -> where Postgres stores data
+
+volumes:
+  pgdata:                     # declare the volume; Docker manages it on disk

@@ -1,0 +1,43 @@
+# --- Agent / IDE specific files ---
+.freebuff/
+.vscode/
+.idea/
+
+# --- Project specific documentation ---
+# Excluding the plan as requested. (Keep README.md, it's needed!)
+PROJECT_PLAN.md
+Olist findings.docx
+
+# --- Environment Variables (CRITICAL: NEVER PUSH THIS) ---
+.env
+.env.*
+!.env.example
+
+# --- Python Virtual Environments ---
+venv/
+.venv/
+env/
+ENV/
+
+# --- Python Caches & Compiled Files ---
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Data Files (Avoid pushing large datasets to GitHub) ---
+# If your data folders contain large CSVs, parquet, or json files, ignore them.
+data/bronze/
+data/landing/
+data/source/
+*.csv
+*.parquet
+*.json
+*.xlsx
+
+# --- Logs & Database files ---
+*.log
+*.sqlite
+*.db
